@@ -39,7 +39,7 @@ let canvas = Canvas(width: 500, height: 500)
 
 for x in stride(from: 0, through: 500, by: 100){
     
-    for y in stride(from: 0, through: 500, by: 100){
+    for y in stride(from: 0, through: 500, by: 200){
 
 
         
@@ -54,6 +54,23 @@ for x in stride(from: 0, through: 500, by: 100){
 
 
         canvas.drawLine(fromX: 100 + x, fromY: 50 + y, toX: 50 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        //second line
+
+        let shift = 50
+        let rise = 100
+        
+        canvas.drawLine(fromX: 0 + x + shift, fromY: 100 + y + rise, toX: 50 + x + shift, toY: 50 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        
+        canvas.drawLine(fromX: 100 + x + shift, fromY: 100 + y + rise, toX: 50 + x + shift, toY: 50 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        canvas.drawLine(fromX: 50 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        canvas.drawLine(fromX: 0 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        
+        canvas.drawLine(fromX: 100 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
 
 
 
