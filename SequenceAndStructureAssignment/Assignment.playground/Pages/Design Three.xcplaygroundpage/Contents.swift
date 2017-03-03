@@ -21,21 +21,44 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
 
-// Generate a grid
-canvas.drawShapesWithFill = false
-canvas.defaultBorderWidth = 1
+//// Generate a grid
+//canvas.drawShapesWithFill = false
+//canvas.defaultBorderWidth = 1
+//
+//// This loop makes a 10 rows of columns
+//for x in stride(from: 25, through: 475, by: 50){
+//    
+//    // This loop makes a single column, bottom to top
+//    for y in stride(from: 25, through: 475, by: 50) {
+//        
+//        // Draw the shapes
+//        canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2)
+//        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
+//    }
+//}
 
-// This loop makes a 10 rows of columns
-for x in stride(from: 25, through: 475, by: 50){
-    
-    // This loop makes a single column, bottom to top
-    for y in stride(from: 25, through: 475, by: 50) {
+for x in stride(from: 0, through: 500, by: 100){
+//    
+//    for y in stride(from: 0, through: 500, by: 100){
+
+
         
-        // Draw the shapes
-        canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2)
-        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
-    }
-}
+        canvas.drawLine(fromX: 0 + x, fromY: 100, toX: 50 + x, toY: 50, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+
+
+        canvas.drawLine(fromX: 100 + x, fromY: 100, toX: 50 + x, toY: 50, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+
+        canvas.drawLine(fromX: 50 + x, fromY: 50, toX: 50 + x, toY: 0, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+
+        canvas.drawLine(fromX: 0, fromY: 50, toX: 50, toY: 0, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+
+
+        canvas.drawLine(fromX: 100 + x, fromY: 50, toX: 50 + x, toY: 0, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+
+
+
+   }
+//}
 
 
 /*:

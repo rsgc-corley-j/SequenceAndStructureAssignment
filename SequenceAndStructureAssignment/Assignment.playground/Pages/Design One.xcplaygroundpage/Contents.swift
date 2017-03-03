@@ -73,11 +73,11 @@ for x in stride(from: 200, through: 300, by: 10){
     else if x == 300 {
         canvas.lineColor = Color.red
     }
-canvas.drawLine(fromX: 250, fromY: 500, toX: x, toY: 100, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+canvas.drawLine(fromX: 250, fromY: 500, toX: x, toY: 100, lineWidth: 2, capStyle: NSLineCapStyle.squareLineCapStyle)
     
-canvas.drawLine(fromX: 250, fromY: 0, toX: x, toY: 100, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+canvas.drawLine(fromX: 250, fromY: 0, toX: x, toY: 100, lineWidth: 2, capStyle: NSLineCapStyle.squareLineCapStyle)
     
-canvas.drawLine(fromX: 250, fromY: 400, toX: x, toY: 500, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+canvas.drawLine(fromX: 250, fromY: 400, toX: x, toY: 500, lineWidth: 2, capStyle: NSLineCapStyle.squareLineCapStyle)
     
 
 
