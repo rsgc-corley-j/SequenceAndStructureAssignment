@@ -78,9 +78,6 @@ canvas.drawLine(fromX: 250, fromY: 500, toX: x, toY: 100, lineWidth: 2, capStyle
 canvas.drawLine(fromX: 250, fromY: 0, toX: x, toY: 100, lineWidth: 2, capStyle: NSLineCapStyle.squareLineCapStyle)
     
 canvas.drawLine(fromX: 250, fromY: 400, toX: x, toY: 500, lineWidth: 2, capStyle: NSLineCapStyle.squareLineCapStyle)
-    
-
-
 }
 
 //for x in stride(from: 0, through: 500, by: 10) {
