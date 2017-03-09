@@ -24,6 +24,7 @@ let canvas = Canvas(width: 500, height: 500)
 // Generate a grid
 canvas.drawShapesWithFill = false
 canvas.defaultBorderWidth = 1
+canvas.highPerformance = false
 
 
 //// This loop makes a 10 rows of columns
