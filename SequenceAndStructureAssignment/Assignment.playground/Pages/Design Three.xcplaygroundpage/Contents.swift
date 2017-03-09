@@ -21,61 +21,67 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
 
-//// Generate a grid
-//canvas.drawShapesWithFill = false
-//canvas.defaultBorderWidth = 1
-//
-//// This loop makes a 10 rows of columns
-//for x in stride(from: 25, through: 475, by: 50){
-//    
-//    // This loop makes a single column, bottom to top
-//    for y in stride(from: 25, through: 475, by: 50) {
-//        
-//        // Draw the shapes
-//        canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2)
-//        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
-//    }
-//}
+canvas.highPerformance = true
 
-for x in stride(from: 0, through: 500, by: 100){
+
+//first line of cubes
+
+for x in stride(from: 0, through: 500, by: 50){
     
-    for y in stride(from: 0, through: 500, by: 200){
-
-
+    for y in stride(from: 0, through: 500, by: 100){
         
-        canvas.drawLine(fromX: 0 + x, fromY: 100 + y, toX: 50 + x, toY: 50 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
-
-
-        canvas.drawLine(fromX: 100 + x, fromY: 100 + y, toX: 50 + x, toY: 50 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
-
-        canvas.drawLine(fromX: 50 + x, fromY: 50 + y, toX: 50 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
-
-        canvas.drawLine(fromX: 0 + x, fromY: 50 + y, toX: 50 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
-
-
-        canvas.drawLine(fromX: 100 + x, fromY: 50 + y, toX: 50 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        //colour and drawing the sides of the cubes
         
-        //second line
-
-        let shift = 50
-        let rise = 100
+        canvas.lineColor = Color(hue: x + y, saturation: 100, brightness: 100, alpha: 100)
         
-        canvas.drawLine(fromX: 0 + x + shift, fromY: 100 + y + rise, toX: 50 + x + shift, toY: 50 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        for t in stride(from: 0, through: 35, by: 1) {
+            canvas.drawLine(fromX: 0 + x, fromY: 50 - t + y, toX: 25 + x, toY: 35 - t + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+            
+        }
+        canvas.lineColor = Color(hue: x + y, saturation: 100, brightness: 100, alpha: 50)
+        
+        for s in stride(from: 0, through: 35, by: 1){
+            canvas.drawLine(fromX: 50 + x, fromY: 50 + y - s, toX: 25 + x, toY: 35 + y - s, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        }
+        canvas.drawLine(fromX: 25 + x, fromY: 35 + y, toX: 25 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        canvas.drawLine(fromX: 0 + x, fromY: 15 + y, toX: 25 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
         
         
-        canvas.drawLine(fromX: 100 + x + shift, fromY: 100 + y + rise, toX: 50 + x + shift, toY: 50 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        canvas.drawLine(fromX: 50 + x, fromY: 15 + y, toX: 25 + x, toY: 0 + y, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
         
-        canvas.drawLine(fromX: 50 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        //second line of cubes
         
-        canvas.drawLine(fromX: 0 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        //statements used to shift this line
+        
+        let shift = -25
+        let rise = 50
         
         
-        canvas.drawLine(fromX: 100 + x + shift, fromY: 50 + y + rise, toX: 50 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
-
-
-
-   }
+        //colour and drawing the sides of the cubes
+        
+        canvas.lineColor = Color(hue: x + y, saturation: 100, brightness: 100, alpha: 100)
+        
+        for t in stride(from: 0, through: 35, by: 1) {
+            canvas.drawLine(fromX: 0 + x + shift, fromY: 50 - t + y + rise, toX: 25 + x + shift, toY: 35 - t + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        }
+        canvas.lineColor = Color(hue: x + y, saturation: 100, brightness: 100, alpha: 50)
+        for s in stride(from: 0, through: 35, by: 1) {
+            canvas.drawLine(fromX: 50 + x + shift, fromY: 50 - s + y + rise, toX: 25 + x + shift, toY: 35 - s + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        }
+        
+        canvas.drawLine(fromX: 25 + x + shift, fromY: 35 + y + rise, toX: 25 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        canvas.drawLine(fromX: 0 + x + shift, fromY: 15 + y + rise, toX: 25 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        
+        canvas.drawLine(fromX: 50 + x + shift, fromY: 15 + y + rise, toX: 25 + x + shift, toY: 0 + y + rise, lineWidth: 1, capStyle: NSLineCapStyle.squareLineCapStyle)
+        
+        
+    }
 }
+
+
 
 
 /*:
